@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<TSCXML
+	xmlns="http://www.ibm.com/software/analytics/spss/xml/components/time-series"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/software/analytics/spss/xml/components/time-series www.ibm.com/software/analytics/spss/xml/components/time-series-1.0.xsd">
+	<Header>
+		<Application
+			name="IBM SPSS Statistics"
+			version="26.0.0.0"/>
+	</Header>
+	<DataDictionary>
+		<DateSpecification
+			dateSpecID="1"
+			dateSpecDescriptor="Date specification derived from Statistics time-series date variables">
+			<Periods>
+				<Day
+					firstCaseIndex="0"/>
+			</Periods>
+		</DateSpecification>
+	</DataDictionary>
+	<ARIMAModel
+		modelName="模型_1"
+		modelDescriptor="销量千克_ARIMA"
+		variableID="销量千克"
+		dateSpecID="1">
+		<Transformation
+			function="logarithm"
+			nonSeasonalDiff="1"/>
+		<Autoregression>
+			<NonSeasonalFactor>
+				<LagTerm
+					lag="1">
+					<EstimatedParameter>-0.235392958629416 0.0471920847753733</EstimatedParameter>
+				</LagTerm>
+			</NonSeasonalFactor>
+		</Autoregression>
+		<MovingAverage>
+			<NonSeasonalFactor>
+				<LagTerm
+					lag="1">
+					<EstimatedParameter>-0.888263031916319 0.0224619991649492</EstimatedParameter>
+				</LagTerm>
+			</NonSeasonalFactor>
+		</MovingAverage>
+		<OutlierEffect
+			type="additive"
+			startIndex="352">
+			<EstimatedParameter>-2.4396757370488 0.499678858542794</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="490">
+			<EstimatedParameter>-2.64204994025905 0.500630416519027</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="530">
+			<EstimatedParameter>-2.42564647361543 0.499712672325631</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="578">
+			<EstimatedParameter>-2.09900817902984 0.499756585348429</EstimatedParameter>
+		</OutlierEffect>
+		<ARIMAMLSpState
+			periodDeficit="0">
+			<ZState>
+				<FinalZ>1.72864215991258</FinalZ>
+				<FinalPredictedZ>1.24959007264967</FinalPredictedZ>
+			</ZState>
+			<NoiseState>
+				<FinalNoise>0.546301655713755</FinalNoise>
+				<FinalPredictedNoise>0.0672495684508511</FinalPredictedNoise>
+			</NoiseState>
+			<ThetaRecursionState
+				finalIterationNumber="632">
+				<FinalThetas>
+					<ThetaVec>-0.888263031916318</ThetaVec>
+				</FinalThetas>
+				<FinalNu>1</FinalNu>
+			</ThetaRecursionState>
+		</ARIMAMLSpState>
+		<EstimationInfo
+			periodStartIndex="0"
+			periodLength="633"
+			degreesOfFreedom="626">
+			<Statistic
+				type="errVariance">0.286022288680756</Statistic>
+			<Statistic
+				type="meanSqrErr">21.0142759127782</Statistic>
+			<Statistic
+				type="rootMeanSqrErr">4.58413306010833</Statistic>
+			<Statistic
+				type="meanAbsPctErr">56.8603892032643</Statistic>
+			<Statistic
+				type="meanAbsErr">2.98606397607925</Statistic>
+			<Statistic
+				type="maxAbsPctErr">583.203511842269</Statistic>
+			<Statistic
+				type="maxAbsErr">33.8799392737613</Statistic>
+			<Statistic
+				type="rSqr">0.307030346602504</Statistic>
+			<Statistic
+				type="normBayesIC">3.10642564561955</Statistic>
+			<Statistic
+				type="logLikelihood">-498.794096487563</Statistic>
+			<Statistic
+				type="akaikeIC">1009.58819297513</Statistic>
+			<Statistic
+				type="bayesIC">1036.28152934001</Statistic>
+			<Statistic
+				type="stationaryRSqr">0.41496397507653</Statistic>
+			<LjungBoxStatistic
+				k="18"
+				degreesOfFreedom="16"
+				pValue="2.82358631231716e-006">55.608747618869</LjungBoxStatistic>
+		</EstimationInfo>
+	</ARIMAModel>
+	<ARIMAModel
+		modelName="模型_2"
+		modelDescriptor="销售单价元千克_ARIMA"
+		variableID="销售单价元千克"
+		dateSpecID="1">
+		<Transformation
+			nonSeasonalDiff="1"/>
+		<Autoregression>
+			<NonSeasonalFactor>
+				<LagTerm
+					lag="1">
+					<EstimatedParameter>-1.90517278267109 0.0277965707959946</EstimatedParameter>
+				</LagTerm>
+				<LagTerm
+					lag="2">
+					<EstimatedParameter>0.989852269308344 0.00542083941622781</EstimatedParameter>
+				</LagTerm>
+			</NonSeasonalFactor>
+		</Autoregression>
+		<OutlierEffect
+			type="additive"
+			startIndex="1">
+			<EstimatedParameter>-1.00288963193737 0.0175690712913786</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="2">
+			<EstimatedParameter>-0.32732962836318 0.0114089667095469</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="4">
+			<EstimatedParameter>0.0476706978937707 0.00442390849894006</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="26">
+			<EstimatedParameter>-2 0.00543391862622797</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="27">
+			<EstimatedParameter>-1 0.00543391862622797</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="33">
+			<EstimatedParameter>-0.14634146341463 0.00356760685540432</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="62">
+			<EstimatedParameter>-1.00000000000001 0.0053509809428488</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="65">
+			<EstimatedParameter>-0.999999999999992 0.00418400278403632</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="69">
+			<EstimatedParameter>1 0.00403106467776098</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="142">
+			<EstimatedParameter>-1 0.00356760685537263</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="245">
+			<EstimatedParameter>1.96240766867361 0.00383828993247527</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="247">
+			<EstimatedParameter>-0.791751573212432 0.00460751640119631</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="289">
+			<EstimatedParameter>2 0.00356760685540432</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="301">
+			<EstimatedParameter>4 0.00936937106167077</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="353">
+			<EstimatedParameter>2 0.0035676068554677</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="359">
+			<EstimatedParameter>2 0.00358429554631772</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="366">
+			<EstimatedParameter>-2 0.0112205599822023</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="370">
+			<EstimatedParameter>-1.8 0.00361752062017682</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="373">
+			<EstimatedParameter>6 0.00375444212693945</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="375">
+			<EstimatedParameter>-1.8 0.00374910501271339</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="431">
+			<EstimatedParameter>4 0.00549344127245088</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="432">
+			<EstimatedParameter>2 0.00546786348682419</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="623">
+			<EstimatedParameter>-2 0.00356760685527757</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="11">
+			<EstimatedParameter>-1.99999999999998 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="21">
+			<EstimatedParameter>-1.99999999999998 0.00653139301259397</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="41">
+			<EstimatedParameter>-1.99999999999998 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="53">
+			<EstimatedParameter>0.3 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="54">
+			<EstimatedParameter>0.3 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="60">
+			<EstimatedParameter>-1.59999999999996 0.00969584687195898</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="61">
+			<EstimatedParameter>1.00000000000002 0.0114303356355751</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="64">
+			<EstimatedParameter>-0.999999999999964 0.00921342065739506</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="71">
+			<EstimatedParameter>1 0.00737986800034035</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="84">
+			<EstimatedParameter>1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="90">
+			<EstimatedParameter>1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="103">
+			<EstimatedParameter>1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="106">
+			<EstimatedParameter>0.999999999999996 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="125">
+			<EstimatedParameter>-1.99999999999998 0.00663551914897808</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="127">
+			<EstimatedParameter>-1.99999999999998 0.00663551914897808</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="130">
+			<EstimatedParameter>2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="137">
+			<EstimatedParameter>2 0.00663551914894861</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="139">
+			<EstimatedParameter>-2 0.00663551914897288</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="151">
+			<EstimatedParameter>-0.999999999999997 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="167">
+			<EstimatedParameter>-1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="178">
+			<EstimatedParameter>0.499999999999993 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="179">
+			<EstimatedParameter>0.499999999999996 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="190">
+			<EstimatedParameter>-0.999999999999996 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="196">
+			<EstimatedParameter>2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="207">
+			<EstimatedParameter>-2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="216">
+			<EstimatedParameter>1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="219">
+			<EstimatedParameter>1 0.00672702312139961</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="221">
+			<EstimatedParameter>-0.5 0.00912676213138922</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="222">
+			<EstimatedParameter>-0.500000000000001 0.0089835428207615</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="230">
+			<EstimatedParameter>1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="236">
+			<EstimatedParameter>0.499999999999985 0.0103442389261002</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="237">
+			<EstimatedParameter>0.499999999999975 0.0138141212931456</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="238">
+			<EstimatedParameter>0.999999999999982 0.0103442389261461</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="249">
+			<EstimatedParameter>0.731261686502444 0.0108390793877969</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="250">
+			<EstimatedParameter>-1.8951867881056 0.00949240703882647</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="260">
+			<EstimatedParameter>1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="264">
+			<EstimatedParameter>1 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="268">
+			<EstimatedParameter>1 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="272">
+			<EstimatedParameter>1 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="275">
+			<EstimatedParameter>-2 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="294">
+			<EstimatedParameter>2 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="298">
+			<EstimatedParameter>1 0.00909689822399293</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="299">
+			<EstimatedParameter>1 0.00936937106185126</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="302">
+			<EstimatedParameter>2 0.0170056678666523</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="313">
+			<EstimatedParameter>2 0.00653139301256496</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="316">
+			<EstimatedParameter>-2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="326">
+			<EstimatedParameter>-2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="346">
+			<EstimatedParameter>-2 0.00663551914896334</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="348">
+			<EstimatedParameter>2 0.00663551914897548</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="357">
+			<EstimatedParameter>-2 0.0065619458182377</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="363">
+			<EstimatedParameter>2 0.00919729620687536</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="364">
+			<EstimatedParameter>2 0.00958157037272915</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="367">
+			<EstimatedParameter>2 0.0244594384360111</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="368">
+			<EstimatedParameter>1.8 0.0107043645875122</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="382">
+			<EstimatedParameter>7.8 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="392">
+			<EstimatedParameter>-1.8 0.00680244608669225</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="394">
+			<EstimatedParameter>-6 0.010773525259769</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="395">
+			<EstimatedParameter>-3.8 0.0141543215114312</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="396">
+			<EstimatedParameter>-4 0.0104602178902604</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="401">
+			<EstimatedParameter>2 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="402">
+			<EstimatedParameter>2 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="414">
+			<EstimatedParameter>-2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="419">
+			<EstimatedParameter>-4 0.00653139301259396</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="423">
+			<EstimatedParameter>-1 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="424">
+			<EstimatedParameter>-1 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="429">
+			<EstimatedParameter>-2 0.00660293729255347</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="456">
+			<EstimatedParameter>1 0.00886134465967104</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="457">
+			<EstimatedParameter>1 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="479">
+			<EstimatedParameter>2 0.00663551914896334</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="481">
+			<EstimatedParameter>2 0.00663551914896334</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="486">
+			<EstimatedParameter>2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="491">
+			<EstimatedParameter>2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="495">
+			<EstimatedParameter>-2 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="501">
+			<EstimatedParameter>-2 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="506">
+			<EstimatedParameter>-4 0.00653139301259396</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="521">
+			<EstimatedParameter>-2 0.00886134465967104</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="522">
+			<EstimatedParameter>-1 0.00886134465974974</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="527">
+			<EstimatedParameter>-1 0.00653139301262297</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="534">
+			<EstimatedParameter>1 0.00663551914897808</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="536">
+			<EstimatedParameter>1 0.00663551914897808</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="543">
+			<EstimatedParameter>1 0.00886134465967104</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="544">
+			<EstimatedParameter>1 0.00886134465971039</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="551">
+			<EstimatedParameter>4 0.00653139301259396</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="561">
+			<EstimatedParameter>-2 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="564">
+			<EstimatedParameter>-0.800000000000001 0.0104602178902837</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="565">
+			<EstimatedParameter>-1.2 0.0141543215114492</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="566">
+			<EstimatedParameter>-0.8 0.0107735252597211</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="568">
+			<EstimatedParameter>0.8 0.00680244608669225</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="582">
+			<EstimatedParameter>2 0.00653139301260847</EstimatedParameter>
+		</OutlierEffect>
+		<ARIMAMLSpState
+			periodDeficit="0">
+			<ZState>
+				<FinalZ>10</FinalZ>
+				<FinalPredictedZ>10</FinalPredictedZ>
+			</ZState>
+			<NoiseState>
+				<FinalNoise>0 0</FinalNoise>
+			</NoiseState>
+			<ThetaRecursionState
+				finalIterationNumber="2">
+				<FinalThetas>
+					<ThetaVec/>
+					<ThetaVec>0.957444334967296</ThetaVec>
+				</FinalThetas>
+				<FinalNu>594.515839460141 49.5233747960057</FinalNu>
+			</ThetaRecursionState>
+		</ARIMAMLSpState>
+		<EstimationInfo
+			periodStartIndex="0"
+			periodLength="633"
+			degreesOfFreedom="518">
+			<Statistic
+				type="errVariance">0.000239295801172726</Statistic>
+			<Statistic
+				type="meanSqrErr">0.00230279058153413</Statistic>
+			<Statistic
+				type="rootMeanSqrErr">0.0479874002372928</Statistic>
+			<Statistic
+				type="meanAbsPctErr">0.0338326154506145</Statistic>
+			<Statistic
+				type="meanAbsErr">0.00376483216698555</Statistic>
+			<Statistic
+				type="maxAbsPctErr">8.30925306718856</Statistic>
+			<Statistic
+				type="maxAbsErr">0.997110368062627</Statistic>
+			<Statistic
+				type="rSqr">0.999893311491737</Statistic>
+			<Statistic
+				type="normBayesIC">-4.91038455889102</Statistic>
+			<Statistic
+				type="logLikelihood">1795.69061754356</Statistic>
+			<Statistic
+				type="akaikeIC">-3363.38123508713</Statistic>
+			<Statistic
+				type="bayesIC">-2856.20784415439</Statistic>
+			<Statistic
+				type="stationaryRSqr">0.997884416185347</Statistic>
+			<LjungBoxStatistic
+				k="18"
+				degreesOfFreedom="16"
+				pValue="9.27657674341109e-005">46.1357713594918</LjungBoxStatistic>
+		</EstimationInfo>
+	</ARIMAModel>
+	<ARIMAModel
+		modelName="模型_3"
+		modelDescriptor="批发价格元千克_ARIMA"
+		variableID="批发价格元千克"
+		dateSpecID="1">
+		<Transformation
+			function="logarithm"
+			nonSeasonalDiff="1"/>
+		<MovingAverage>
+			<NonSeasonalFactor>
+				<LagTerm
+					lag="1">
+					<EstimatedParameter>0.406715539753862 0.0381337892884798</EstimatedParameter>
+				</LagTerm>
+			</NonSeasonalFactor>
+		</MovingAverage>
+		<OutlierEffect
+			type="additive"
+			startIndex="112">
+			<EstimatedParameter>-0.183818754735143 0.0252519519554039</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="196">
+			<EstimatedParameter>0.119983838243062 0.0252609937212455</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="287">
+			<EstimatedParameter>0.13710212798817 0.0254242187624143</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="290">
+			<EstimatedParameter>0.160454954505126 0.0254856008073342</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="326">
+			<EstimatedParameter>-0.220742280818316 0.0252695152478743</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="339">
+			<EstimatedParameter>0.170299414222954 0.0253046779159268</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="346">
+			<EstimatedParameter>0.123523921260503 0.0252584844242583</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="368">
+			<EstimatedParameter>0.336237216928334 0.0252883248431211</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="417">
+			<EstimatedParameter>-0.520515397918084 0.025287263273562</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="568">
+			<EstimatedParameter>-0.165667411860737 0.0252518976219206</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="207">
+			<EstimatedParameter>-0.229731303758933 0.0423557475107125</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="296">
+			<EstimatedParameter>0.323761852249901 0.0423571844460354</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="358">
+			<EstimatedParameter>-0.229583909929896 0.0423656426144162</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="375">
+			<EstimatedParameter>0.183046573032216 0.0430362003437529</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="377">
+			<EstimatedParameter>-0.239597135043415 0.0429476593057627</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="396">
+			<EstimatedParameter>-0.201405670814044 0.0465980183324847</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="397">
+			<EstimatedParameter>-0.548988389590685 0.0463622646055074</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="431">
+			<EstimatedParameter>-0.196215688969941 0.0423768839285842</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="492">
+			<EstimatedParameter>0.175436587251005 0.0423648215848498</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="510">
+			<EstimatedParameter>-0.340440526503987 0.042362658164879</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="548">
+			<EstimatedParameter>0.268648285846861 0.0463622684756354</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="549">
+			<EstimatedParameter>0.193701781108062 0.0463768314686247</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="553">
+			<EstimatedParameter>0.264402896883832 0.0424807095558325</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="562">
+			<EstimatedParameter>-0.198769985381828 0.0424440801449761</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="583">
+			<EstimatedParameter>0.172016161476839 0.0424798074785172</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="586">
+			<EstimatedParameter>0.189390852553314 0.0424683234980284</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="level"
+			startIndex="621">
+			<EstimatedParameter>-0.288009956298886 0.0423660693554621</EstimatedParameter>
+		</OutlierEffect>
+		<ARIMAMLSpState
+			periodDeficit="0">
+			<ZState>
+				<FinalZ>1.82454929205105</FinalZ>
+				<FinalPredictedZ>1.83799474809727</FinalPredictedZ>
+			</ZState>
+			<NoiseState>
+				<FinalNoise>-0.00322061470004198</FinalNoise>
+				<FinalPredictedNoise>0.0102248413461794</FinalPredictedNoise>
+			</NoiseState>
+			<ThetaRecursionState
+				finalIterationNumber="632">
+				<FinalThetas>
+					<ThetaVec>0.406715539753862</ThetaVec>
+				</FinalThetas>
+				<FinalNu>1</FinalNu>
+			</ThetaRecursionState>
+		</ARIMAMLSpState>
+		<EstimationInfo
+			periodStartIndex="0"
+			periodLength="633"
+			degreesOfFreedom="604">
+			<Statistic
+				type="errVariance">0.00214945957078021</Statistic>
+			<Statistic
+				type="meanSqrErr">0.135473121923345</Statistic>
+			<Statistic
+				type="rootMeanSqrErr">0.368066735692516</Statistic>
+			<Statistic
+				type="meanAbsPctErr">3.05245768362263</Statistic>
+			<Statistic
+				type="meanAbsErr">0.205365975467467</Statistic>
+			<Statistic
+				type="maxAbsPctErr">21.9056798136269</Statistic>
+			<Statistic
+				type="maxAbsErr">2.38856285304307</Statistic>
+			<Statistic
+				type="rSqr">0.98518522073098</Statistic>
+			<Statistic
+				type="normBayesIC">-1.713271730914</Statistic>
+			<Statistic
+				type="logLikelihood">1058.50230771396</Statistic>
+			<Statistic
+				type="akaikeIC">-2061.00461542793</Statistic>
+			<Statistic
+				type="bayesIC">-1936.43571239182</Statistic>
+			<Statistic
+				type="stationaryRSqr">0.671609725183994</Statistic>
+			<LjungBoxStatistic
+				k="18"
+				degreesOfFreedom="17"
+				pValue="0.0408859222080632">28.3616410151134</LjungBoxStatistic>
+		</EstimationInfo>
+	</ARIMAModel>
+</TSCXML>
